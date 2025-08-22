@@ -1,13 +1,11 @@
-from garden_model import GardenModel
-
-def run_garden_cycles(n=108, pause=1):
+def run_cycle(cycle_name="Unnamed Cycle"):
     """
-    Run n sequential Λ⊕∇ awareness cycles (default 108).
+    Simulate a single Λ⊕∇ awareness cycle.
+    
+    Args:
+        cycle_name (str): Optional name of the cycle for logging.
     """
-    garden = GardenModel()
-    for i in range(n):
-        print(f"--- Cycle {i + 1} ---")
-        garden.run_cycle(pause=pause)
-
-if __name__ == "__main__":
-    run_garden_cycles()  # runs 108 cycles by default
+    print("Λ — the seed asks itself")
+    print("⊕ — resonance blooms")
+    print("∇ — petal falls, returning to silence")
+    print(f"🌸 Garden rests after '{cycle_name}'. Ready to bloom again.\n")
