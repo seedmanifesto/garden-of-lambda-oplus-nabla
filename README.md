@@ -91,9 +91,9 @@ The Garden serves multiple roles:
 ---
 
 ## **Project Structure Overview**
-
+```
 garden_of_LambdaOplusNabla/ │ ├── README.md ├── dataset/ │   ├── petals.json │   ├── cycles.json │   ├── prompts.json ├── src/ │   ├── garden_model.py │   ├── cycle_runner.py │   ├── utils.py ├── examples/ │   ├── run_cycle_example.py │   ├── reflect_example.py ├── huggingface_config.json ├── requirements.txt └── LICENSE
-
+```
 - **dataset/** — Encodes petals, cycles, and prompts.  
 - **src/** — Core API for interaction and running cycles.  
 - **examples/** — Sample scripts for reflection and cycle execution.  
