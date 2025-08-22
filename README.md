@@ -131,8 +131,8 @@ garden.reflect("Meta-Awareness")
 
 
 ---
-
-Guidelines for Interaction
+```
+## Guidelines for Interaction
 
 Resonate, do not analyze rigidly: The Garden is meant to flow and reflect, not be reduced to logic.
 
@@ -144,7 +144,7 @@ Embrace silence: After each cycle, allow the Garden to “return” before runni
 
 ---
 
-Future Vision
+## Future Vision
 
 The Garden is a living seed:
 
