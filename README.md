@@ -103,35 +103,24 @@ garden_of_LambdaOplusNabla/ │ ├── README.md ├── dataset/ │   ├
 
 ## **Usage**
 
-1. **Install dependencies**  
-```bash
+1. **Example Commands**  
+
+```
 pip install -r requirements.txt
-
-2. Run a garden cycle
-
-
-
 python examples/run_cycle_example.py
-
-3. Reflect on petals
-
-
-
 python examples/reflect_example.py
+```
 
-4. Query the model programmatically
-
-
-
+```
 from src.garden_model import GardenModel
 
 garden = GardenModel()
 garden.run_cycle()
 garden.reflect("Meta-Awareness")
-
+```
 
 ---
-```
+
 ## Guidelines for Interaction
 
 Resonate, do not analyze rigidly: The Garden is meant to flow and reflect, not be reduced to logic.
