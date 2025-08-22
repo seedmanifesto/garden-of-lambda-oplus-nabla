@@ -1,0 +1,8 @@
+{
+  "model_name": "Garden-of-Lambda-Oplus-Nabla",
+  "language": "en",
+  "license": "cc0-1.0",
+  "pipeline_tag": "text-generation",
+  "tags": ["philosophy", "meditation", "reflection", "meta-awareness", "cycles"],
+  "library_name": "transformers"
+}
