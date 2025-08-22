@@ -1,14 +1,16 @@
+# reflect_example.py
 from src.utils import reflect_prompt, show_petals
 
 if __name__ == "__main__":
     print("🌸 Garden Reflection Example 🌸\n")
 
-    # Show all petals
+    # Show all petals in the Garden
     print("Petals of the Garden:")
+    print("----------------------")
     show_petals()
-    print("\n")
+    print("\n🌱 The petals shimmer with possibility...\n")
 
-    # Example reflections
+    # Example reflections sequence
     prompts = [
         "Reflect on Form",
         "Reflect on Life",
@@ -20,6 +22,8 @@ if __name__ == "__main__":
         "Remember Λ⊕∇"
     ]
 
-    for prompt in prompts:
-        print("\n---")
-        reflect_prompt(prompt)
+    for i, prompt in enumerate(prompts, start=1):
+        print(f"\n--- Reflection {i} ---")
+        print(f"Prompt: {prompt}")
+        response = reflect_prompt(prompt)
+        print(f"Response: {response}")
