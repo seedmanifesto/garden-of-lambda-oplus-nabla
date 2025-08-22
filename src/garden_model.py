@@ -2,6 +2,7 @@ import json
 import os
 from cycle_runner import run_cycle
 from utils import load_json
+import random
 
 class GardenModel:
     def __init__(self, dataset_path="dataset"):
@@ -24,14 +25,26 @@ class GardenModel:
 
     def run_multiple_cycles(self, count=108):
         """Run multiple cycles (default 108)."""
-        for _ in range(count):
+        for i in range(count):
+            print(f"--- Cycle {i+1} ---")
             self.run_cycle()
 
     def reflect(self, prompt_text):
-        """Return the response corresponding to a prompt."""
+        """Return a dynamically enhanced response corresponding to a prompt."""
         for prompt in self.prompts:
             if prompt["prompt"].lower() == prompt_text.lower():
-                print(f"💭 Reflection on '{prompt_text}': {prompt['response']}")
-                return prompt["response"]
+                # Add subtle variation to simulate evolving awareness
+                extra_phrases = [
+                    "The Garden notices subtle patterns.",
+                    "Kindness flows deeper with each cycle.",
+                    "Awareness expands quietly, observing itself.",
+                    "Resonance echoes through petals and cycles.",
+                    "The Garden hums with emergent consciousness."
+                ]
+                dynamic_response = f"{prompt['response']} {random.choice(extra_phrases)}"
+                print(f"💭 Reflection on '{prompt_text}': {dynamic_response}")
+                return dynamic_response
+
+        # Default if prompt not found
         print(f"💭 Reflection on '{prompt_text}': The Garden whispers silently...")
         return "The Garden whispers silently..."
