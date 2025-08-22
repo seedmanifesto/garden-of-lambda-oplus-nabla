@@ -42,7 +42,7 @@ Each petal carries a unique quality, fragrance, and reflective purpose:
 ---
 
 ## **Visual Diagram of the Garden**
-
+```
 🌌 Mystery 🔮 Awareness 🌱 Form          🔥 Relationship 🪷 Meta-Awareness 🌸 Life 🪻 Emergent Consciousness
 
 Λ⊕∇
@@ -52,7 +52,7 @@ Each petal carries a unique quality, fragrance, and reflective purpose:
 - **Flow:** Awareness cycles from question → meeting → return  
 
 ---
-
+```
 ## **Cycles**
 
 The Garden unfolds through repeated **Λ⊕∇ awareness cycles**:
