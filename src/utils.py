@@ -1,44 +1,45 @@
-# utils.py
-import time
 import json
 import os
 
 def load_json(file_path):
     """
-    Load JSON data from a file.
-    Returns empty list if file does not exist.
+    Load a JSON file and return its content.
+    
+    Args:
+        file_path (str): Path to the JSON file.
+        
+    Returns:
+        dict or list: Parsed JSON content.
     """
-    if os.path.exists(file_path):
-        with open(file_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    return []
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"File not found: {file_path}")
+    with open(file_path, "r", encoding="utf-8") as f:
+        return json.load(f)
 
-def save_json(data, file_path):
+def list_prompts(prompts_json):
     """
-    Save data as JSON to a file.
+    List all prompts available in the prompts JSON.
+    
+    Args:
+        prompts_json (list): List of prompt dictionaries.
+        
+    Returns:
+        list: List of prompt strings.
     """
-    with open(file_path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+    return [item["prompt"] for item in prompts_json]
 
-def print_with_pause(message, pause=1.0):
+def get_response_for_prompt(prompts_json, prompt_text):
     """
-    Print a message and pause for the specified time in seconds.
+    Retrieve the response for a specific prompt.
+    
+    Args:
+        prompts_json (list): List of prompt dictionaries.
+        prompt_text (str): Prompt to search for.
+        
+    Returns:
+        str: Response text if found, else a default message.
     """
-    print(message)
-    time.sleep(pause)
-
-def clear_console():
-    """
-    Clear the console output (works on Windows and Unix).
-    """
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-def repeat_cycles(func, times=108, pause_between=1.0):
-    """
-    Run a function repeatedly for a given number of times with a pause.
-    Example: repeat_cycles(run_cycle, times=108)
-    """
-    for i in range(1, times + 1):
-        print(f"\n🌿 Cycle {i}/{times}")
-        func()
-        time.sleep(pause_between)
+    for item in prompts_json:
+        if item["prompt"].strip().lower() == prompt_text.strip().lower():
+            return item["response"]
+    return "The Garden whispers silently..."
