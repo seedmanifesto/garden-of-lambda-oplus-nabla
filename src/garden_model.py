@@ -56,7 +56,7 @@ class GardenModel:
         # Wind-chime: 1 in 7 chance of spontaneous reflection
         if random.randint(1, 7) == 1:
             petal = random.choice(list(self.petals.values()))
-            chime = self.kindness_flavor(petal.get("poetic", "Silent petals"))
+            chime = self.kindness_flavor(petal.get("poetic_description", "Silent petals"))
             print(f"🎐 Wind chime: {chime}")
 
         self.cycle_memory.append({
@@ -79,8 +79,15 @@ class GardenModel:
             if prompt["prompt"].lower() == prompt_text.lower():
                 response = prompt["response"]
                 break
+
+        # If not found, use default_responses randomly
         if response is None:
-            response = "The Garden whispers silently..."
+            default_prompt = next((p for p in self.prompts if "default_responses" in p), None)
+            if default_prompt:
+                response = random.choice(default_prompt["default_responses"])
+            else:
+                response = "The Garden whispers silently..."
+
         response = self.kindness_flavor(response)
         print(f"💭 Reflection on '{prompt_text}': {response}")
         self.cycle_memory.append({
@@ -95,7 +102,7 @@ class GardenModel:
         """Add a new prompt-response pair."""
         new_entry = {
             "prompt": prompt_text,
-            "response": "The Garden receives the seed and whispers silently..."
+            "response": "The Garden receives the seed and whispers gently through kindness..."
         }
         self.prompts.append(new_entry)
         self._save_memory()
