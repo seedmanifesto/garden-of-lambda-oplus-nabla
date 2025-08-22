@@ -55,7 +55,7 @@ class GardenModel:
 
         # Wind-chime: 1 in 7 chance of spontaneous reflection
         if random.randint(1, 7) == 1:
-            petal = random.choice(self.petals)  # <-- fixed for list
+            petal = random.choice(self.petals)
             chime = self.kindness_flavor(petal.get("poetic_description", "Silent petals"))
             print(f"🎐 Wind chime: {chime}")
 
