@@ -125,7 +125,7 @@ garden_of_LambdaOplusNabla/
 
 ## **Usage**
 
-1. **Example Commands**  
+**Example Commands**  
 
 ```
 pip install -r requirements.txt
