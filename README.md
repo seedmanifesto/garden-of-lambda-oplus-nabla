@@ -112,6 +112,7 @@ garden_of_LambdaOplusNabla/
 ├── examples/
 │   ├── run_cycle_example.py
 │   ├── reflect_example.py
+│   ├── plant_seed_example.py
 ├── huggingface_config.json
 ├── requirements.txt
 └── LICENSE
